@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class LeadAssignment {
+
+    public static void main(String[] args) {
+       
+        String[] salesReps = {"Alice", "Bob", "Charlie", "David"};
+        int lastAssignedIndex = 0;  // Track last assigned index (can be stored in a database or file)
+
+       
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter lead details...");
+        System.out.println("Enter company size: ");
+        String companySize = scanner.nextLine();
+
+        System.out.println("Enter budget: ");
+        String budget = scanner.nextLine();
+
+        System.out.println("Enter urgency: ");
+        String urgency = scanner.nextLine();
+
+       
+        String assignedRep = salesReps[lastAssignedIndex];
+
+       
+        lastAssignedIndex = (lastAssignedIndex + 1) % salesReps.length;
+
+       
+        System.out.println("Lead assigned to: " + assignedRep);
+
+       
+        scanner.close();
+    }
+}
